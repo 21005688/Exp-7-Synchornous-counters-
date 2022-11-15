@@ -46,43 +46,75 @@ This type of counter is normally referred to as a Down Counter, (CTD). In a bina
 
 4-bit Count Down Counter
 ### Procedure
-/* write all the steps invloved */
+1.Open a new project using Quartus II.
+2.Declare the inputs and outputs inside module projname().
+3.Set the reset value using register.
+4.Use commands like begin and end to stimulate the counter.
+5.For Up counter increment the count and for Down counter decrement the count.
+6.End the verilog programming.
 
 
 
 ### PROGRAM 
 /*
 Program for flipflops  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
+Developed by: J.DEEPIKA.
+RegisterNumber: 212221230016.
+
+module up_c(clock,reset,upcounter);
+input clock,reset;
+output reg[2:0] upcounter;
+always@(posedge clock or posedge reset)
+begin
+if(reset)
+upcounter=3'b 000;
+else
+upcounter=upcounter+1;
+end endmodule
+
+```
 */
 
+### RTL LOGIC UP COUNTER 
 
+![P1](https://user-images.githubusercontent.com/94747031/201835336-90628880-13a9-4a78-af92-da6f8bd1372f.png)
 
-
-
-
-### RTL LOGIC UP COUNTER AND DOWN COUNTER  
-
-
-
-
-
-
-
-
-
-### TIMING DIGRAMS FOR COUNTER  
-
-
-
-
+### TIMING DIGRAMS FOR COUNTER
+![P2](https://user-images.githubusercontent.com/94747031/201835335-dec93d77-0b74-4236-91b1-8eacf2b1164f.png)
 
 ### TRUTH TABLE 
+![P3](https://user-images.githubusercontent.com/94747031/201835354-ed6f98f3-0747-49db-b6c3-7f24e9d18e91.png)
+
+### Using Down-counter
+```
+module do_wn(clock,reset,downcounter);
+input clock,reset;
+output reg[3:0] downcounter;
+always@(posedge clock or posedge reset)
+begin
+if(reset)
+downcounter=4'b 000;
+else
+downcounter=downcounter+1;
+end endmodule
+```
+### RTL LOGIC UP COUNTER
 
 
+![P4](https://user-images.githubusercontent.com/94747031/201835947-c271a817-e200-4bb2-a1f1-bbd1d451d52e.png)
+
+
+### TIMING DIGRAMS FOR COUNTER
+
+![P5](https://user-images.githubusercontent.com/94747031/201835943-fd00104a-e4c6-4f06-a67f-901d5fc6667f.png)
+
+### TRUTH TABLE
+
+
+![P6](https://user-images.githubusercontent.com/94747031/201835953-85d9ad0a-0224-4030-8cb3-bd09f7d56d42.png)
 
 
 
 
 ### RESULTS 
+Hence the Four bit Up counter and Down counter is implemented successfully and its functionality is validated.
